@@ -8,19 +8,20 @@ head
     link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
     link(rel="stylesheet", href="/css/styles.css")
 body
-    .row
-        .card.col-sm
-            img.card-img-top(src="../img/Star_Wars/starwarslogo.jpg")
-            .card-body 
-                h3.card-title #{SWTitle}
-                p.card-text dajfkajdflkjaklfjdaklf
-                button.btn.primary Explore
-        .card.col-sm
-            img.card-img-top(src="img/Pokemon/pokemonlogo.png")
-            .card-body
-                h3.card-title #{PokeTitle}
-                p.card-text dakfjdak
-        .card.col-sm
-            img.card-img-top(src="img/starwarslogo.jpg")
-            .card-body
-                h3.card-title Different API
+    .container
+        .row
+            .card.col-sm
+                .card-img-top.img-1
+                .card-body 
+                    h3.card-title #{SWTitle}
+                    p.card-text dajfkajdflkjaklfjdaklf
+                    button.btn.btn-primary Explore
+            .card.col-sm
+                img.card-img-top(src="img/Pokemon/pokemonlogo.png")
+                .card-body
+                    h3.card-title #{PokeTitle}
+                    p.card-text dakfjdak
+            .card.col-sm
+                img.card-img-top(src="img/starwarslogo.jpg")
+                .card-body
+                    h3.card-title Different API
