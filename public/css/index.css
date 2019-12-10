@@ -9,3 +9,15 @@
 .img-3{
     background-image: url("../img/Star_Wars/starwarslogo.jpg");
 }
+
+.card-body{
+    position: relative;
+}
+button{
+    bottom:0;
+    left: 0;
+}
+.container{
+    height:100vh;
+    align-content: center;
+}

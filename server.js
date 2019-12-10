@@ -22,15 +22,19 @@ app.get('', async (req,res)=>{
          
 })
 
-app.get('/starwars', (req, res)=>{
+app.get('/starwars/DarthVader', (req, res)=>{
+    
     fetch("https://swapi.co/api/people")
     .then(res => res.json())
     .then(
         data => {
+            // Quick way reuse data.results[3] for each variable
+            const character = data.results[3]
             res.render('starwars',{
-                planet: data.results[1].name
+                name: character.name,
+                age: character.age
             })
-            console.log(data.results[1].name)
+            console.log(character.name)
         }
     )
 })
