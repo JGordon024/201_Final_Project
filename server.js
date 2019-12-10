@@ -16,13 +16,14 @@ app.get('', async (req,res)=>{
 
             res.render('index',{
                 SWTitle: 'Star Wars API',
-                PokeTitle: 'Pokemon API'
+                PokeTitle: 'Pokemon API',
+                RickTitle: 'Rock and Morty API'
             })
          
 })
 
-app.get('starwars', (req, res)=>{
-    fetch(`https://swapi.co/api/${req.params.name}`)
+app.get('/starwars', (req, res)=>{
+    fetch("https://swapi.co/api/people")
     .then(res => res.json())
     .then(
         data => {

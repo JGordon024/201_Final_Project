@@ -7,17 +7,29 @@ head
     link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
     link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
     link(rel="stylesheet", href="/css/styles.css")
+    link(rel="stylesheet", href="/css/starwars.css")
 body
-    .row
-        .card.col-sm(style="width: 300px")
-            img.card-img-top(src="../img/Star_Wars/")
-            .card-body 
-            h3.card-title Planets
-            p.card-text Take a look at some of the planets that exist in the Star Wars Universe
-        .card.col-sm
-            img.card-img-top(src="img/Star_Wars/LukeSkywalker.jpg")
-            h3.card-title Characters
-            p.card-text dakfjdak
-        .card.col-sm
-            img.card-img-top(src="img/Star_Wars/AT-AT.jpeg")
-            h3.card-title Vehicles
+    .container
+        .row
+            .card.col-sm
+                .card-img-top.img-1
+                .card-body 
+                    h3.card-title Planets
+                    p.card-text Thousands of planets exist in the Star Wars universe, explored through the numerous movies, books, and shows. Continue to learn more on some of these planets
+                    a(href="star_wars/planets")
+                        button.btn.btn-primary Explore
+            .card.col-sm
+                .card-img-top.img-2
+                .card-body
+                    h3.card-title Characters
+                    p.card-text Sith, Jedi, Smugglers, and so much more! Star Wars has them all, come and see just some of the many characters
+                    a(href="star_wars/characters")
+            .card.col-sm
+                .card-img-top.img-3
+                .card-body
+                    h3.card-title Vehicles
+                    p.card-text The Star Wars universe is filled of various different types of vehicles, enter to explore just a few of these!
+                    a(href="")
+                    button.btn.btn-primary Explore
+        a(href="/")
+            button.btn.btn-primary Return Home
