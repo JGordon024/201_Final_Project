@@ -1,0 +1,28 @@
+doctype html
+
+body
+    .container
+        .row
+            .card.col-sm
+                .card-img-top.img-1
+                .card-body 
+                    h3.card-title #{luke}
+                    p.card-text Thousands of planets exist in the Star Wars universe, explored through the numerous movies, books, and shows. Continue to learn more on some of these planets
+                    a(href="star_wars/luke")
+                        button.btn.btn-primary Explore
+            .card.col-sm
+                .card-img-top.img-2
+                .card-body
+                    h3.card-title #{obi}
+                    p.card-text Sith, Jedi, Smugglers, and so much more! Star Wars has them all, come and see just some of the many characters
+                    a(href="star_wars/characters")
+                        button.btn.btn-primary Explore
+            .card.col-sm
+                .card-img-top.img-3
+                .card-body
+                    h3.card-title #{vader}
+                    p.card-text The Star Wars universe is filled of various different types of vehicles, enter to explore just a few of these!
+                    a(href="star_wars/vehicles.pug")
+                    button.btn.btn-primary Explore
+        a(href="/")
+            button.btn.btn-primary Return Home

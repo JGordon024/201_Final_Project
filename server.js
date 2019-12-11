@@ -21,8 +21,23 @@ app.get('', async (req,res)=>{
             })
          
 })
+app.get('/starwars', (req,res)=>{
+    res.render('starwars',{
+        characters: "Characters",
+        vehicles: "Vehicles",
+        planets: "Planets"
+    })
+})
 
-app.get('/starwars/DarthVader', (req, res)=>{
+app.get('/star_wars/characters',(req,res)=>{
+    res.render('star_wars/characters', {
+        vader: "Darth Vader",
+        luke: "Luke Skywalker",
+        obi: "Obi-wan Kenobi"
+    })
+})
+
+app.get('starwars/DarthVader', (req, res)=>{
     
     fetch("https://swapi.co/api/people")
     .then(res => res.json())
@@ -30,7 +45,7 @@ app.get('/starwars/DarthVader', (req, res)=>{
         data => {
             // Quick way reuse data.results[3] for each variable
             const character = data.results[3]
-            res.render('starwars',{
+            res.render('/starwars/characters/vader',{
                 name: character.name,
                 age: character.age
             })
