@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+.img-1{
+    background-image: url('../img/Star_Wars/luke.jpg');
+}
+
+.img-2{
+    background-image: url('../img/Star_Wars/obiwan.jpg') ;
+}
+
+.img-3{
+    background-image: url('../img/Star_Wars/vader.jpeg');
+} 
+

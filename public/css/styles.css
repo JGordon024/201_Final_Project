@@ -36,3 +36,9 @@ button{
 .container{
     height:100vh;
 }
+
+.card-header{
+    font-size:2em;
+    text-align: center;
+    font-weight:600;
+}

@@ -1,5 +1,13 @@
 doctype html
-
+head
+    meta(charset="UTF-8")
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible' content='ie=edge')
+    title Home Page
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
+    link(rel="stylesheet", href="/css/styles.css")
+    link(rel="stylesheet", href="/css/characters.css")
 body
     .container
         .row
@@ -7,22 +15,22 @@ body
                 .card-img-top.img-1
                 .card-body 
                     h3.card-title #{luke}
-                    p.card-text Thousands of planets exist in the Star Wars universe, explored through the numerous movies, books, and shows. Continue to learn more on some of these planets
-                    a(href="star_wars/luke")
+                    p.card-text Luke Skywalker, son of Anakin Skywalker, is the main protaganist in Episodes V-VI. Raised on a moisture farm by his Aunt and Uncle, Luke would later go on to join the Rebellion, become a powerful Jedi master, and take down the Empire.
+                    a(href="/characters/luke")
                         button.btn.btn-primary Explore
             .card.col-sm
                 .card-img-top.img-2
                 .card-body
                     h3.card-title #{obi}
-                    p.card-text Sith, Jedi, Smugglers, and so much more! Star Wars has them all, come and see just some of the many characters
-                    a(href="star_wars/characters")
+                    p.card-text Obi-wan Kenobi, once a Council Member of the Jedi Order, was the master of Anakin Skywalker. After the fall of the Jedi Order, he would later guide Luke Skywalker, and ultimately sacrifice himself to allow Luke, Han, Leia, and Chewbacca to escape.
+                    a(href="star_wars/characters/obiwan")
                         button.btn.btn-primary Explore
             .card.col-sm
                 .card-img-top.img-3
                 .card-body
                     h3.card-title #{vader}
-                    p.card-text The Star Wars universe is filled of various different types of vehicles, enter to explore just a few of these!
-                    a(href="star_wars/vehicles.pug")
+                    p.card-text Darth Vader was a powerful Sith Lord, apprentice to Emperor Palpatine. In his youth he was Anakin Skywalker, the chosen one, destined to bring balance to the force. Upon his fall to the dark side, he would fight his master, Obi-wan, but ultimately lose.
+                    a(href="star_wars/characters/vader")
                     button.btn.btn-primary Explore
         a(href="/")
             button.btn.btn-primary Return Home

@@ -36,21 +36,66 @@ app.get('/star_wars/characters',(req,res)=>{
         obi: "Obi-wan Kenobi"
     })
 })
-
-app.get('starwars/DarthVader', (req, res)=>{
+//Gets Luke Skywalker's page and renders the data onto it
+app.get('/star_wars/characters/luke', (req, res)=>{
     
     fetch("https://swapi.co/api/people")
     .then(res => res.json())
     .then(
         data => {
             // Quick way reuse data.results[3] for each variable
-            const character = data.results[3]
-            res.render('/starwars/characters/vader',{
+            const character = data.results[0]
+            res.render('star_wars/characters/luke',{
                 name: character.name,
-                age: character.age
+                age: character.age,
+                height: character.height
             })
             console.log(character.name)
         }
     )
 })
-app.listen(port, ()=>console.log(`Server is ${port}`))
+
+app.get('/poke/:name', async (req, res) => {
+    console.log("pokemon");
+    try {
+        const URI = `https://pokeapi.co/api/v2/pokemon/${req.params.name}`;
+        const pokemonData = await fetch(URI);
+        const json = await pokemonData.json();
+        // console.log(json);
+        const pokeName = await json.name;
+        const pokeImg = await json.sprites.back_default;
+        // console.log(pokeImg);
+    
+        await res.render('poke', {
+            name: pokeName,
+            img: pokeImg
+        });
+    } catch (error) {
+        console.log(error);
+    } 	
+});
+
+app.get('/rm/:character', async (req, res) => {
+    console.log("Rick and Morty")
+    try {
+        const URI = `https://rickandmortyapi.com/api/character/${req.params.id}`;
+        const rmData = await fetch(URI);
+        const json = await rmData.json();
+        // console.log(json);
+        const rmName = await json.results.name;
+        // const pokeImg = await json.sprites.back_default;
+        // console.log(pokeImg);
+    console.log(rmName)
+        await res.render('rick', {
+            name: rmName,
+            // img: pokeImg
+        });
+    } catch (error) {
+        console.log(error);
+    } 	
+});
+
+
+
+
+app.listen(port, ()=>console.log(`Server is ${port}`));
