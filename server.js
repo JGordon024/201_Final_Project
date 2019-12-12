@@ -57,7 +57,14 @@ app.get('/star_wars/characters/luke', (req, res)=>{
 
 app.get('/poke/:name', async (req, res) => {
     console.log("pokemon");
+    const pokeSubmit = document.getElementByClassName('pokeSubmit')
+    pokeSubmit.addEventListener('onclick', fetchPokemon())
+    function fetchPokemon(){
+        let pokeFetchName = document.getElementsByClassName('pokemon').value
+        console.log(pokeFetchName)
+    }
     try {
+
         const URI = `https://pokeapi.co/api/v2/pokemon/${req.params.name}`;
         const pokemonData = await fetch(URI);
         const json = await pokemonData.json();
@@ -67,8 +74,12 @@ app.get('/poke/:name', async (req, res) => {
         // console.log(pokeImg);
     
         await res.render('poke', {
+            
             name: pokeName,
-            img: pokeImg
+            img: pokeImg,
+            weight: data.weight,
+            height: data.height,
+
         });
     } catch (error) {
         console.log(error);
