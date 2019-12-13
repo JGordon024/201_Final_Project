@@ -56,13 +56,7 @@ app.get('/star_wars/characters/luke', (req, res)=>{
 })
 
 app.get('/poke/:name', async (req, res) => {
-    console.log("pokemon");
-    const pokeSubmit = document.getElementByClassName('pokeSubmit')
-    pokeSubmit.addEventListener('onclick', fetchPokemon())
-    function fetchPokemon(){
-        let pokeFetchName = document.getElementsByClassName('pokemon').value
-        console.log(pokeFetchName)
-    }
+
     try {
 
         const URI = `https://pokeapi.co/api/v2/pokemon/${req.params.name}`;
