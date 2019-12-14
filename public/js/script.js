@@ -1,11 +1,10 @@
-console.log("pokemon");
-const pokeSubmit = document.querySelector('.pokeSubmit')
+//Pokemon page
+const pokeSubmit = document.querySelector('.pokeSubmit');
 
-pokeSubmit.addEventListener('onclick', pokemonInput)
-
-function pokemonInput(){
-    e.preventDefault()
-    console.log('Clicked')
-    // let pokeFetchName = document.querySelector('pokemon')
-    // console.log(pokeFetchName)
+function pokeClickHandler(){ 
+    let pokeFetchName = document.querySelector('.pokemonInput').value;
+    window.location = `/poke/${pokeFetchName}`
 }
+
+pokeSubmit.addEventListener('click', pokeClickHandler, false);
+
