@@ -11,11 +11,14 @@ head
 body
     .container
         .row
-            .card.col-sm
-                .card-img-top.img-1
-                .card-body 
-                    h3.card-title #{name}
-                    p.card-text #{name}
+            .card.info-card
+                img(src=img).card-img-top.img
+                h3.card-title #{name}
+                ul.list-group.list-group-flush
+                    li.list-group-item Height: #{height} feet
+                    li.list-group-item Weight: #{weight} pounds
+                    li.list-group-item Abilities: #{name}
+                .button-container        
                     a(href="/")
-                        button.btn.btn-primary Return Home
+                        button.btn.btn-primary.return-home Return Home
 

@@ -1,3 +1,4 @@
+doctype html
 head
     meta(charset="UTF-8")
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
@@ -6,15 +7,18 @@ head
     link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
     link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
     link(rel="stylesheet", href="/css/styles.css")
-    link(rel="stylesheet", href="/css/characters.css")
-
+    link(rel="stylesheet", href="/css/index.css")
 body
     .container
         .row
-            .card.col-sm
-                .img-card-top.img-1(style="height:500px")
-                .card-header #{name}
+            .card.info-card
+                img(src='').card-img-top.img
+                h3.card-title #{name}
                 ul.list-group.list-group-flush
-                    li.list-group-item dafd
-                    li.list-group-item dafdaf
-                    li.list-group-item dafdf
+                    li.list-group-item 
+                    li.list-group-item 
+                    li.list-group-item 
+                .button-container        
+                    a(href="/")
+                        button.btn.btn-primary.return-home Return Home
+

@@ -23,8 +23,8 @@ body
                 .card-body
                     h3.card-title #{characters}
                     p.card-text Sith, Jedi, Smugglers, and so much more! Star Wars has them all, come and see just some of the many characters
-                    a(href="star_wars/characters")
-                        button.btn.btn-primary Explore
+                    input(type="text").charInput
+                    button.btn.btn-primary.charSubmit Explore
             .card.col-sm
                 .card-img-top.img-3
                 .card-body
@@ -34,3 +34,4 @@ body
                     button.btn.btn-primary Explore
         a(href="/")
             button.btn.btn-primary Return Home
+    script(src="js/starwars.js")
