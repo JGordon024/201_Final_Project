@@ -32,22 +32,16 @@ app.get('/starwars/characters/:id', async (req, res) => {
         const URI = `https://swapi.co/api/people/${req.params.id}`;
         const charData = await fetch(URI);
         const json = await charData.json();
-        const charName = json.name;  
-        const weight = json.mass;
-        const eyeColor = json.eye_color;
-        const height = json.height;
-        const birth = json.birth_year;
-        const hair = json.hair_color;
-        const gender = json.gender
+   
 
         await res.render('characters', {
-            name: charName,
-            height: height,
-            weight: weight,
-            eyes: eyeColor,
-            birthYear: birth,
-            hair: hair,
-            gender: gender
+            name: json.name,
+            height: json.height,
+            weight: json.mass,
+            eyes: json.eye_color,
+            birthYear: json.birth_year,
+            hair: json.hair_color,
+            gender: json.gender
         });
     } catch (error) {
         console.log(error);
@@ -58,10 +52,10 @@ app.get('/starwars/characters/:id', async (req, res) => {
 //API for the planets
 app.get('/starwars/planets/:id', async (req, res) => {
     try {
-        const URI = `https://swapi.co/api/planets/1`;
+        const URI = `https://swapi.co/api/planets/${req.params.id}`;
         const planetData = await fetch(URI);
         const json = await planetData.json();
-console.log(json.manufacturer)
+        
         await res.render('planets', {
             name: json.name,
             year: json.orbital_period, 
@@ -85,7 +79,6 @@ app.get('/poke/:name', async (req, res) => {
         const pokeName = json.name;
         const {...sprites} = json.sprites
         // const abilities = json.abilities.foreach(function(ability){console.log(ability.name)})
-        console.log(sprites.front_default)
         await res.render('poke', {
             name: pokeName,
             img: sprites.front_default,
@@ -98,23 +91,17 @@ app.get('/poke/:name', async (req, res) => {
 });
 // Input a numeric value for the ID to get the character in the JSON. Gives basic data
 app.get('/rm/:id', async (req, res) => {
-    console.log("Rick and Morty")
     try {
         const URI = `https://rickandmortyapi.com/api/character/${req.params.id}`;
         const rmData = await fetch(URI);
         const json = await rmData.json();
-        const rmName =  json.name;
-        const rickImg =  json.image
-        const gender = json.gender
-        const origin = json.origin.name
-        const species = json.species
-        console.log(origin);
+   
         await res.render('rick', {
-            name: rmName,
-            img: rickImg,
-            gender: gender,
-            species: species,
-            origin: origin
+            name: json.name,
+            img: json.image,
+            gender: json.gender,
+            species: json.species,
+            origin: json.origin.name
         });
     } catch (error) {
         console.log(error);
