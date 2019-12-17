@@ -32,6 +32,9 @@ text-align: center;
 .container{
     height:100vh;
 }
+.container h1{
+    text-align: center;
+}
 .row{
     justify-content: center;
 }

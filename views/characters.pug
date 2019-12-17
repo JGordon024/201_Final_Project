@@ -3,21 +3,25 @@ head
     meta(charset="UTF-8")
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
     meta(http-equiv='X-UA-Compatible' content='ie=edge')
-    title Home Page
+    title Star Wars Characters
     link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
     link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
     link(rel="stylesheet", href="/css/styles.css")
     link(rel="stylesheet", href="/css/index.css")
 body
     .container
+        h1 Characters
         .row
             .card.info-card
-                img(src='').card-img-top.img
+                img(src='/img/Star_Wars/characters.png').card-img-top
                 h3.card-title #{name}
                 ul.list-group.list-group-flush
-                    li.list-group-item 
-                    li.list-group-item 
-                    li.list-group-item 
+                    li.list-group-item Gender: #{gender}
+                    li.list-group-item Height: #{height} centimeters
+                    li.list-group-item Weight: #{weight} kilometers
+                    li.list-group-item Hair Color: #{hair}
+                    li.list-group-item Eye Color: #{eyes}
+                    li.list-group-item Year of birth: #{birthYear} (Before/After Battle of Yavin)
                 .button-container        
                     a(href="/")
                         button.btn.btn-primary.return-home Return Home

@@ -3,21 +3,22 @@ head
     meta(charset="UTF-8")
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
     meta(http-equiv='X-UA-Compatible' content='ie=edge')
-    title Home Page
+    title Star Wars Planets
     link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous")
     link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
     link(rel="stylesheet", href="/css/styles.css")
     link(rel="stylesheet", href="/css/index.css")
 body
     .container
+        h1 Planets
         .row
             .card.info-card
-                img(src=img).card-img-top.img
+                img(src='/img/Star_Wars/planets.jpg').card-img-top
                 h3.card-title #{name}
                 ul.list-group.list-group-flush
-                    li.list-group-item Gender: #{gender}
-                    li.list-group-item Homeworld: #{origin}
-                    li.list-group-item Species: #{species}
+                    li.list-group-item A year on #{name} takes a total of #{year} days for a year to pass. Each day consist of #{day} hours.
+                    li.list-group-item The climate on #{name} is #{climate}, while the terrain is #{terrain}
+                    li.list-group-item The population of #{name} is approximately #{population}
                 .button-container        
                     a(href="/")
                         button.btn.btn-primary.return-home Return Home

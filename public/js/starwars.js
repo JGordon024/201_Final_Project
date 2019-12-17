@@ -9,3 +9,13 @@ function charClickHandler(){
 }
 
 charSubmit.addEventListener('click', charClickHandler, false);
+
+// Planets
+const planetSubmit = document.querySelector('.planetSubmit');
+
+function planetClickHandler(){ 
+    let planetFetchName = document.querySelector('.planetInput').value;
+    window.location = `/starwars/planets/${planetFetchName}`
+}
+
+planetSubmit.addEventListener('click', planetClickHandler, false);

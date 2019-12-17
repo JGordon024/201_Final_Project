@@ -15,23 +15,16 @@ body
                 .card-img-top.img-1
                 .card-body 
                     h3.card-title #{planets}
-                    p.card-text Thousands of planets exist in the Star Wars universe, explored through the numerous movies, books, and shows. Continue to learn more on some of these planets
-                    a(href="star_wars/planets")
-                        button.btn.btn-primary Explore
+                    p.card-text Thousands of planets exist in the Star Wars universe, explored through the numerous movies, books, and shows. Enter a numeric value between 1-61 to learn more on some of these planets.
+                    input(type="text").planetInput
+                    button.btn.btn-primary.planetSubmit Explore
             .card.col-sm
                 .card-img-top.img-2
                 .card-body
                     h3.card-title #{characters}
-                    p.card-text Sith, Jedi, Smugglers, and so much more! Star Wars has them all, come and see just some of the many characters
+                    p.card-text Sith, Jedi, Smugglers, and so much more! Star Wars has them all, simply enter a numeric value between 1-88 to see just some of the many characters
                     input(type="text").charInput
                     button.btn.btn-primary.charSubmit Explore
-            .card.col-sm
-                .card-img-top.img-3
-                .card-body
-                    h3.card-title #{vehicles}
-                    p.card-text The Star Wars universe is filled of various different types of vehicles, enter to explore just a few of these!
-                    a(href="star_wars/vehicles")
-                    button.btn.btn-primary Explore
         a(href="/")
             button.btn.btn-primary Return Home
     script(src="js/starwars.js")

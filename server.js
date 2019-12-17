@@ -17,6 +17,7 @@ app.get('', async (req,res)=>{
             })
          
 })
+// Following API's are for the Star Wars API. Get's info for characters, vehicles, and planets. First app.get simply renders the first page or the star wars api
 app.get('/starwars', (req,res)=>{
     res.render('starwars',{
         characters: "Characters",
@@ -24,20 +25,56 @@ app.get('/starwars', (req,res)=>{
         planets: "Planets"
     })
 })
-//  
-app.get('/characters/:id', async (req, res) => {
+
+//API for the characters
+app.get('/starwars/characters/:id', async (req, res) => {
     try {
-        const URI = `https://swapi.co/api/people/1`;
+        const URI = `https://swapi.co/api/people/${req.params.id}`;
         const charData = await fetch(URI);
         const json = await charData.json();
         const charName = json.name;  
+        const weight = json.mass;
+        const eyeColor = json.eye_color;
+        const height = json.height;
+        const birth = json.birth_year;
+        const hair = json.hair_color;
+        const gender = json.gender
+
         await res.render('characters', {
-            name: charName
+            name: charName,
+            height: height,
+            weight: weight,
+            eyes: eyeColor,
+            birthYear: birth,
+            hair: hair,
+            gender: gender
         });
     } catch (error) {
         console.log(error);
     } 	
 });
+
+
+//API for the planets
+app.get('/starwars/planets/:id', async (req, res) => {
+    try {
+        const URI = `https://swapi.co/api/planets/1`;
+        const planetData = await fetch(URI);
+        const json = await planetData.json();
+console.log(json.manufacturer)
+        await res.render('planets', {
+            name: json.name,
+            year: json.orbital_period, 
+            day: json.rotation_period,
+            climate: json.climate,
+            terrain: json.terrain,
+            population: json.population
+        });
+    } catch (error) {
+        console.log(error);
+    } 	
+});
+
 // Put in a pokemon name and it gives you the image, as well as some other basic information.
 app.get('/poke/:name', async (req, res) => {
     try {
